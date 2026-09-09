@@ -1265,6 +1265,80 @@ a:focus-visible, button:focus-visible {
   background: rgba(0, 255, 136, 0.1);
 }
 
+/* --- LinkedIn Embed Showcase in Project Cards --- */
+.project-embed-wrapper {
+  margin-top: 24px;
+  background: rgba(7, 11, 9, 0.85);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: border-color var(--transition-smooth);
+}
+
+.project-embed-wrapper:hover {
+  border-color: var(--accent-border);
+}
+
+.embed-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: rgba(14, 21, 16, 0.95);
+  border-bottom: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.embed-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.embed-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+}
+
+.embed-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+
+.embed-link {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+}
+
+.embed-link:hover {
+  color: var(--accent);
+}
+
+.embed-frame-container {
+  width: 100%;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.embed-frame-container iframe {
+  width: 100%;
+  max-width: 100%;
+  border: none;
+  display: block;
+}
+
 /* --- VERTICAL EDUCATION TIMELINE --- */
 .education-section {
   padding-top: 100px;
