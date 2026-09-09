@@ -3,148 +3,783 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Mohamed Ismail Mohamed Faslan — Mechatronics Engineering, Embedded Systems, IoT and Automation portfolio.">
-  <title>Faslan — Mechatronics • Embedded • IoT</title>
+  <meta name="description" content="Mohamed Ismail Mohamed Faslan — Mechatronics Engineering student specializing in Embedded Systems, IoT, Electronics, and Automation. Portfolio, projects, and resume.">
+  <meta name="author" content="Mohamed Ismail Mohamed Faslan">
+  <meta name="theme-color" content="#070a08">
+  <title>Mohamed Ismail Mohamed Faslan | Mechatronics & Embedded Systems Engineer</title>
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header class="site-header">
-  <a class="logo" href="#home">F<span>S</span></a>
-  <nav class="desktop-nav" aria-label="Primary">
-    <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
-  </nav>
-  <a class="nav-cta" href="mailto:ismailfaslan2002@gmail.com">Hire / Connect</a>
-  <button class="menu-toggle" aria-label="Open navigation">☰</button>
-</header>
 
-<main>
-<section id="home" class="hero">
-  <div class="hero-grid">
-    <div class="hero-copy">
-      <p class="kicker">MECHATRONICS ENGINEER • EMBEDDED • IoT</p>
-      <h1>Designing <span>smart systems</span> that solve real problems.</h1>
-      <p class="hero-text">I'm <strong>Mohamed Ismail Mohamed Faslan</strong>, a Higher Diploma Mechatronics Engineering student focused on electronics, embedded systems, IoT and automation.</p>
-      <div class="hero-actions">
-  <a class="button primary" href="#projects">View projects ↗</a>
+  <!-- Tech Grid Background -->
+  <div class="tech-grid-overlay" aria-hidden="true"></div>
 
-  <a class="button secondary"
-     href="https://www.linkedin.com/in/faslanismail/"
-     target="_blank"
-     rel="noreferrer">
-    LinkedIn ↗
-  </a>
+  <!-- Sticky Site Header -->
+  <header class="site-header" id="navbar">
+    <div class="header-container">
+      <a class="logo" href="#home" aria-label="Faslan Home">
+        <span class="logo-symbol">&lt;FS /&gt;</span>
+        <span class="logo-text">FASLAN<span class="logo-sub">MECHATRONICS</span></span>
+      </a>
 
-  <a class="button cv-button"
-     href="Faslan_Ismail.pdf"
-     download="Mohamed_Ismail_Mohamed_Faslan_CV.pdf">
-    Download CV ↓
-  </a>
-</div>
-      <div class="micro-links">
-        <a href="mailto:ismailfaslan2002@gmail.com">ismailfaslan2002@gmail.com</a>
-        <a href="https://github.com/FaslanIsmail" target="_blank" rel="noreferrer">github.com/FaslanIsmail</a>
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="Faslan_CV_2026.pdf" download="Mohamed_Ismail_Mohamed_Faslan_CV.pdf" class="nav-link nav-cv-link">CV ↓</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="nav-cta button-header" href="#contact">Hire / Connect</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="photo-frame"><img src="images/profile.jpg" alt="Faslan in a professional suit"></div>
-      <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
-      <div class="floating-card card-one"><small>01</small><strong>Embedded</strong><span>ESP32 • ESP8266</span></div>
-      <div class="floating-card card-two"><small>02</small><strong>IoT</strong><span>Blynk • ThingSpeak</span></div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer" id="mobileNav" aria-hidden="true">
+    <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+    <div class="mobile-nav-panel">
+      <div class="mobile-nav-header">
+        <span class="mobile-nav-title">&lt;NAVIGATION /&gt;</span>
+        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close navigation menu">✕</button>
+      </div>
+      <nav class="mobile-links" aria-label="Mobile Navigation">
+        <a href="#home" class="mobile-link"><span>00</span>Home</a>
+        <a href="#about" class="mobile-link"><span>01</span>About</a>
+        <a href="#skills" class="mobile-link"><span>02</span>Skills</a>
+        <a href="#projects" class="mobile-link"><span>03</span>Projects</a>
+        <a href="#education" class="mobile-link"><span>04</span>Education</a>
+        <a href="#contact" class="mobile-link"><span>05</span>Contact</a>
+      </nav>
+      <div class="mobile-nav-footer">
+        <a class="button primary full-width" href="Faslan_CV_2026.pdf" download="Mohamed_Ismail_Mohamed_Faslan_CV.pdf">
+          Download CV (PDF) ↓
+        </a>
+        <div class="mobile-socials">
+          <a href="https://www.linkedin.com/in/faslanismail/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          <a href="https://github.com/FaslanIsmail" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="scroll-note">SCROLL TO EXPLORE <span>↓</span></div>
-</section>
 
-<section class="ticker" aria-label="Focus areas">
-  <div>⚙ Electronics</div><div>◉ Embedded Systems</div><div>⌁ Internet of Things</div><div>▣ Automation</div><div>✦ Robotics</div><div>◌ Smart Manufacturing</div>
-</section>
+  <main>
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+      <div class="hero-grid">
+        <div class="hero-copy reveal">
+          <!-- Live Status Indicator -->
+          <div class="status-badge">
+            <span class="pulse-dot"></span>
+            <span>AVAILABLE FOR INTERNSHIPS &amp; GRADUATE ROLES</span>
+          </div>
 
-<section id="about" class="section about">
-  <div class="section-title"><p class="eyebrow">01 / ABOUT</p><h2>From classroom concepts<br>to <span>working prototypes.</span></h2></div>
-  <div class="about-grid">
-    <div class="about-lead">Motivated and enthusiastic Mechatronics Engineering student with practical experience in embedded systems, IoT, automation and electronics.</div>
-    <div class="about-copy">
-      <p>I learn best by building, testing and debugging. My projects bring together sensors, microcontrollers, actuators, connectivity and software to create useful engineering systems.</p>
-      <p>My current career direction is toward <strong>Embedded Systems, IoT and Automation</strong>, with a growing interest in smart healthcare and hospital automation.</p>
+          <p class="kicker">MECHATRONICS ENGINEERING • EMBEDDED SYSTEMS • IoT • AUTOMATION</p>
+          
+          <h1 class="hero-title">
+            Mohamed Ismail <br>
+            <span class="highlight-name">Mohamed Faslan</span>
+          </h1>
+
+          <div class="hero-role-tag">
+            <span class="role-chip">Mechatronics Engineering</span>
+            <span class="role-chip">Embedded Systems</span>
+            <span class="role-chip">IoT</span>
+            <span class="role-chip">Automation</span>
+          </div>
+
+          <p class="hero-text">
+            Designing <strong>intelligent physical systems</strong> that bridge hardware and software. Higher Diploma Mechatronics Engineering student focused on microcontrollers, sensor integration, IoT telemetry, and automated control systems.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button primary" href="#projects">
+              View Projects ↗
+            </a>
+            <a class="button secondary" href="https://www.linkedin.com/in/faslanismail/" target="_blank" rel="noreferrer">
+              LinkedIn ↗
+            </a>
+            <a class="button cv-button" href="Faslan_CV_2026.pdf" download="Mohamed_Ismail_Mohamed_Faslan_CV.pdf">
+              Download CV ↓
+            </a>
+          </div>
+
+          <div class="micro-links">
+            <a href="mailto:ismailfaslan2002@gmail.com" class="micro-item">
+              <span class="micro-icon">✉</span> ismailfaslan2002@gmail.com
+            </a>
+            <a href="https://github.com/FaslanIsmail" target="_blank" rel="noreferrer" class="micro-item">
+              <span class="micro-icon">⌘</span> github.com/FaslanIsmail
+            </a>
+            <span class="micro-item location-tag">
+              <span class="micro-icon">📍</span> Sri Lanka
+            </span>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="visual-wrapper">
+            <!-- Tech Framing Brackets -->
+            <div class="tech-frame-corners" aria-hidden="true">
+              <span class="corner tl"></span>
+              <span class="corner tr"></span>
+              <span class="corner bl"></span>
+              <span class="corner br"></span>
+            </div>
+
+            <!-- Profile Image Container -->
+            <div class="photo-frame">
+              <img src="images/profile.jpg" alt="Mohamed Ismail Mohamed Faslan - Mechatronics Engineer" class="profile-img" loading="eager">
+              <div class="photo-scanline" aria-hidden="true"></div>
+            </div>
+
+            <!-- Orbit Rings -->
+            <div class="orbit orbit-a" aria-hidden="true"></div>
+            <div class="orbit orbit-b" aria-hidden="true"></div>
+
+            <!-- Floating Telemetry Badges -->
+            <div class="floating-card card-one">
+              <div class="badge-head">
+                <span class="dot-indicator"></span>
+                <small>01 // FIRMWARE</small>
+              </div>
+              <strong>Embedded Systems</strong>
+              <span>ESP32 • ESP8266 • PIC</span>
+            </div>
+
+            <div class="floating-card card-two">
+              <div class="badge-head">
+                <span class="dot-indicator"></span>
+                <small>02 // CONNECTIVITY</small>
+              </div>
+              <strong>IoT &amp; Cloud</strong>
+              <span>Blynk • ThingSpeak • Telemetry</span>
+            </div>
+
+            <div class="floating-card card-three">
+              <div class="badge-head">
+                <span class="dot-indicator"></span>
+                <small>03 // CONTROL</small>
+              </div>
+              <strong>Automation</strong>
+              <span>Sensors • Actuators • PLC</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-note">
+        <span>SCROLL TO EXPLORE</span>
+        <span class="scroll-arrow">↓</span>
+      </div>
+    </section>
+
+    <!-- TICKER FOCUS BAR -->
+    <section class="ticker-container" aria-label="Technical Focus Areas">
+      <div class="ticker-track">
+        <div class="ticker-content">
+          <span class="ticker-item"><span class="ticker-icon">⚙</span> Electronics</span>
+          <span class="ticker-sep">/</span>
+          <span class="ticker-item"><span class="ticker-icon">◉</span> Embedded Systems</span>
+          <span class="ticker-sep">/</span>
+          <span class="ticker-item"><span class="ticker-icon">⌁</span> Internet of Things</span>
+          <span class="ticker-sep">/</span>
+          <span class="ticker-item"><span class="ticker-icon">▣</span> Automation &amp; Control</span>
+          <span class="ticker-sep">/</span>
+          <span class="ticker-item"><span class="ticker-icon">✦</span> Robotics</span>
+          <span class="ticker-sep">/</span>
+          <span class="ticker-item"><span class="ticker-icon">⚡</span> PCB Prototyping</span>
+          <span class="ticker-sep">/</span>
+          <span class="ticker-item"><span class="ticker-icon">◌</span> Sensor Networks</span>
+          <span class="ticker-sep">/</span>
+          <span class="ticker-item"><span class="ticker-icon">💻</span> C / C++ Firmware</span>
+          <span class="ticker-sep">/</span>
+        </div>
+        <!-- Duplicated for continuous look -->
+        <div class="ticker-content" aria-hidden="true">
+          <span class="ticker-item"><span class="ticker-icon">⚙</span> Electronics</span>
+          <span class="ticker-sep">/</span>
+          <span class="ticker-item"><span class="ticker-icon">◉</span> Embedded Systems</span>
+          <span class="ticker-sep">/</span>
+          <span class="ticker-item"><span class="ticker-icon">⌁</span> Internet of Things</span>
+          <span class="ticker-sep">/</span>
+          <span class="ticker-item"><span class="ticker-icon">▣</span> Automation &amp; Control</span>
+          <span class="ticker-sep">/</span>
+          <span class="ticker-item"><span class="ticker-icon">✦</span> Robotics</span>
+          <span class="ticker-sep">/</span>
+          <span class="ticker-item"><span class="ticker-icon">⚡</span> PCB Prototyping</span>
+          <span class="ticker-sep">/</span>
+          <span class="ticker-item"><span class="ticker-icon">◌</span> Sensor Networks</span>
+          <span class="ticker-sep">/</span>
+          <span class="ticker-item"><span class="ticker-icon">💻</span> C / C++ Firmware</span>
+          <span class="ticker-sep">/</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section about-section">
+      <div class="section-title reveal">
+        <p class="eyebrow">01 / ABOUT ME</p>
+        <h2>From classroom concepts<br>to <span>working prototypes.</span></h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-lead-col reveal">
+          <div class="about-lead">
+            Motivated and enthusiastic Mechatronics Engineering student with practical experience in embedded systems, IoT, automation, and electronics.
+          </div>
+
+          <div class="about-stats-grid">
+            <div class="stat-card">
+              <span class="stat-num">04+</span>
+              <span class="stat-label">Core Engineering Disciplines</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">03</span>
+              <span class="stat-label">Featured Working Systems</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">2026</span>
+              <span class="stat-label">Higher Diploma Graduation</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-copy-col reveal">
+          <div class="about-copy">
+            <p>
+              I learn best by building, testing, and debugging. My engineering journey is driven by bringing together sensors, microcontrollers, actuators, connectivity, and software to create responsive, reliable physical systems.
+            </p>
+            <p>
+              My current career direction is toward <strong>Embedded Systems, IoT, and Automation</strong>, with a growing interest in smart healthcare, medical device automation, and hospital systems.
+            </p>
+            <p>
+              Whether calibrating analog sensors, writing real-time embedded C/C++ firmware, or streaming telemetry to cloud IoT platforms, I enjoy tackling engineering challenges with a rigorous, hands-on mindset.
+            </p>
+          </div>
+
+          <div class="about-pill-container">
+            <span class="tech-tag">Embedded C/C++</span>
+            <span class="tech-tag">Hardware-Software Co-Design</span>
+            <span class="tech-tag">Closed-Loop Control</span>
+            <span class="tech-tag">Circuit Troubleshooting</span>
+            <span class="tech-tag">Cloud Telemetry</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="section skills-section">
+      <div class="section-title reveal">
+        <p class="eyebrow">02 / SKILLS &amp; TOOLKIT</p>
+        <h2>My technical &amp;<br><span>engineering toolkit.</span></h2>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Skill 1 -->
+        <article class="skill-card reveal">
+          <div class="skill-card-top">
+            <span class="num">01</span>
+            <span class="skill-category-badge">SOFTWARE &amp; FIRMWARE</span>
+          </div>
+          <h3>Programming</h3>
+          <p class="skill-desc">Writing efficient embedded firmware, algorithmic control logic, and industrial sequences.</p>
+          <div class="skill-items">
+            <span class="item-badge">C</span>
+            <span class="item-badge">C++</span>
+            <span class="item-badge">Arduino Programming</span>
+            <span class="item-badge">PLC Ladder Logic</span>
+          </div>
+        </article>
+
+        <!-- Skill 2 -->
+        <article class="skill-card reveal">
+          <div class="skill-card-top">
+            <span class="num">02</span>
+            <span class="skill-category-badge">HARDWARE PLATFORMS</span>
+          </div>
+          <h3>Embedded Systems</h3>
+          <p class="skill-desc">Microcontroller architecture, peripheral interfacing, GPIO, timers, and serial protocols.</p>
+          <div class="skill-items">
+            <span class="item-badge">ESP32</span>
+            <span class="item-badge">ESP8266</span>
+            <span class="item-badge">Arduino UNO / Nano</span>
+            <span class="item-badge">PIC Microcontrollers</span>
+          </div>
+        </article>
+
+        <!-- Skill 3 -->
+        <article class="skill-card reveal">
+          <div class="skill-card-top">
+            <span class="num">03</span>
+            <span class="skill-category-badge">DESIGN &amp; SIMULATION</span>
+          </div>
+          <h3>Engineering Software</h3>
+          <p class="skill-desc">Schematic design, mathematical modeling, simulation, and software development tooling.</p>
+          <div class="skill-items">
+            <span class="item-badge">Proteus</span>
+            <span class="item-badge">MATLAB</span>
+            <span class="item-badge">Arduino IDE</span>
+            <span class="item-badge">Visual Studio Code</span>
+          </div>
+        </article>
+
+        <!-- Skill 4 -->
+        <article class="skill-card reveal">
+          <div class="skill-card-top">
+            <span class="num">04</span>
+            <span class="skill-category-badge">CLOUD &amp; WIRELESS</span>
+          </div>
+          <h3>IoT Technologies</h3>
+          <p class="skill-desc">Connecting physical hardware to cloud dashboards for remote telemetry and alert handling.</p>
+          <div class="skill-items">
+            <span class="item-badge">Blynk IoT</span>
+            <span class="item-badge">ThingSpeak</span>
+            <span class="item-badge">Sensor Integration</span>
+            <span class="item-badge">Wireless Communication</span>
+          </div>
+        </article>
+
+        <!-- Skill 5 -->
+        <article class="skill-card reveal">
+          <div class="skill-card-top">
+            <span class="num">05</span>
+            <span class="skill-category-badge">CIRCUIT DESIGN</span>
+          </div>
+          <h3>Electronics</h3>
+          <p class="skill-desc">Hands-on hardware design, schematic translation, power management, and bench testing.</p>
+          <div class="skill-items">
+            <span class="item-badge">Circuit Design</span>
+            <span class="item-badge">Electrical Wiring</span>
+            <span class="item-badge">PCB Prototyping</span>
+            <span class="item-badge">Electronic Troubleshooting</span>
+          </div>
+        </article>
+
+        <!-- Skill 6 -->
+        <article class="skill-card reveal">
+          <div class="skill-card-top">
+            <span class="num">06</span>
+            <span class="skill-category-badge">COLLABORATION</span>
+          </div>
+          <h3>Professional Skills</h3>
+          <p class="skill-desc">Cross-disciplinary mindset essential for engineering teams and complex project delivery.</p>
+          <div class="skill-items">
+            <span class="item-badge">Problem Solving</span>
+            <span class="item-badge">Communication</span>
+            <span class="item-badge">Leadership</span>
+            <span class="item-badge">Teamwork</span>
+            <span class="item-badge">Adaptability</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="section projects-section">
+      <div class="section-title reveal">
+        <p class="eyebrow">03 / FEATURED PROJECTS</p>
+        <h2>Systems I've<br><span>built &amp; explored.</span></h2>
+      </div>
+
+      <div class="projects-list">
+        <!-- PROJECT 01 -->
+        <article class="project-card featured-project reveal">
+          <div class="project-header-bar">
+            <div class="project-index">01</div>
+            <div class="project-tag">CAPSTONE / EMBEDDED IoT / HEALTHCARE</div>
+            <div class="project-status">FLAGSHIP PROTOTYPE</div>
+          </div>
+
+          <div class="project-content">
+            <h3 class="project-title">Smart IoT White Cane for Visually Impaired</h3>
+            
+            <p class="project-lead">
+              Developed an intelligent navigation and safety assistance system powered by the ESP32-S3 microcontroller, integrating multi-sensor spatial awareness with real-time feedback.
+            </p>
+
+            <div class="project-specs-box">
+              <div class="spec-col">
+                <span class="spec-label">CORE CONTROLLER</span>
+                <span class="spec-val">ESP32-S3 High Performance MCU</span>
+              </div>
+              <div class="spec-col">
+                <span class="spec-label">SENSORY SUITE</span>
+                <span class="spec-val">Ultrasonic Sensors • Camera Module</span>
+              </div>
+              <div class="spec-col">
+                <span class="spec-label">TELEMETRY &amp; FEEDBACK</span>
+                <span class="spec-val">GPS Geolocation • Bluetooth Audio Guidance</span>
+              </div>
+            </div>
+
+            <p class="project-description">
+              Integrated ultrasonic sensors for obstacle detection at multiple elevation angles, GPS module for continuous live geolocation tracking in emergencies, Bluetooth audio connectivity for synthesized voice alerts, and an onboard camera module to explore enhanced spatial perception.
+            </p>
+
+            <div class="chips">
+              <span>ESP32-S3</span>
+              <span>Ultrasonic Sensors</span>
+              <span>GPS Module</span>
+              <span>Bluetooth Audio</span>
+              <span>Camera Module</span>
+              <span>Embedded C++</span>
+              <span>Assistive Tech</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 02 -->
+        <article class="project-card reveal">
+          <div class="project-header-bar">
+            <div class="project-index">02</div>
+            <div class="project-tag">IoT / ENVIRONMENTAL TELEMETRY</div>
+            <div class="project-status">CLOUD CONNECTED</div>
+          </div>
+
+          <div class="project-content">
+            <h3 class="project-title">IoT Weather Monitoring System</h3>
+
+            <p class="project-lead">
+              Built an autonomous real-time micro-weather station using ESP8266 Wi-Fi microcontroller for continuous environmental data acquisition and cloud monitoring.
+            </p>
+
+            <div class="project-specs-box">
+              <div class="spec-col">
+                <span class="spec-label">CORE CONTROLLER</span>
+                <span class="spec-val">ESP8266 NodeMCU Wi-Fi</span>
+              </div>
+              <div class="spec-col">
+                <span class="spec-label">CLOUD PLATFORM</span>
+                <span class="spec-val">Blynk IoT Dashboard &amp; Mobile App</span>
+              </div>
+              <div class="spec-col">
+                <span class="spec-label">MONITORED METRICS</span>
+                <span class="spec-val">Temperature • Humidity • Pressure</span>
+              </div>
+            </div>
+
+            <p class="project-description">
+              Connected precision digital temperature, humidity, and barometric pressure sensors to stream live telemetry to a custom Blynk IoT dashboard. Implemented automatic reconnect routines, low-latency sampling loops, and threshold-based notification alerts for environmental anomalies.
+            </p>
+
+            <div class="chips">
+              <span>ESP8266</span>
+              <span>Blynk IoT</span>
+              <span>Sensors Interfacing</span>
+              <span>Wi-Fi Telemetry</span>
+              <span>C++</span>
+              <span>Remote Monitoring</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 03 -->
+        <article class="project-card reveal">
+          <div class="project-header-bar">
+            <div class="project-index">03</div>
+            <div class="project-tag">CONTROL SYSTEMS / RENEWABLE ENERGY</div>
+            <div class="project-status">CLOSED-LOOP AUTOMATION</div>
+          </div>
+
+          <div class="project-content">
+            <h3 class="project-title">Dual-Axis Solar Tracking System</h3>
+
+            <p class="project-lead">
+              Engineered an automated dual-axis solar tracker utilizing a PIC16F877A microcontroller to maximize solar energy harvesting efficiency throughout daylight hours.
+            </p>
+
+            <div class="project-specs-box">
+              <div class="spec-col">
+                <span class="spec-label">CORE CONTROLLER</span>
+                <span class="spec-val">PIC16F877A Microcontroller</span>
+              </div>
+              <div class="spec-col">
+                <span class="spec-label">OPTICAL SENSING</span>
+                <span class="spec-val">4-Quadrant LDR Differential Array</span>
+              </div>
+              <div class="spec-col">
+                <span class="spec-label">ACTUATION</span>
+                <span class="spec-val">Dual Micro Servo Motors (Pan &amp; Tilt)</span>
+              </div>
+            </div>
+
+            <p class="project-description">
+              Designed a closed-loop feedback mechanism where four Light Dependent Resistors (LDRs) detect solar irradiance differentials across azimuth and elevation planes. The PIC microcontroller computes positional error and commands dual servo motors to track the sun's trajectory dynamically, significantly improving power output over fixed panels.
+            </p>
+
+            <div class="chips">
+              <span>PIC16F877A</span>
+              <span>LDR Sensor Array</span>
+              <span>Servo Motors</span>
+              <span>Closed-Loop Feedback</span>
+              <span>Embedded C</span>
+              <span>Renewable Energy</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section id="education" class="section education-section">
+      <div class="section-title reveal">
+        <p class="eyebrow">04 / EDUCATION &amp; TRAINING</p>
+        <h2>Building the<br><span>engineering foundation.</span></h2>
+      </div>
+
+      <div class="vertical-timeline reveal">
+        <!-- Timeline Item 1 -->
+        <div class="timeline-item current">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+            <div class="marker-pulse"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-badge-row">
+              <span class="timeline-status-pill in-progress">IN PROGRESS</span>
+              <span class="timeline-date">SEP 2024 — SEP 2026</span>
+            </div>
+            <h3 class="timeline-title">Higher Diploma in Mechatronics Engineering</h3>
+            <p class="timeline-institution"><strong>Liverpool John Moores University (ICBT Campus)</strong></p>
+            <p class="timeline-desc">
+              Comprehensive multidisciplinary engineering program covering mechatronics system design, electronics, embedded programming, automation, robotics, control systems, and industrial sensors.
+            </p>
+            <div class="timeline-tags">
+              <span>Mechatronics</span>
+              <span>Embedded Systems</span>
+              <span>Robotics</span>
+              <span>Control Engineering</span>
+              <span>Automation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 2 -->
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-badge-row">
+              <span class="timeline-status-pill completed">COMPLETED</span>
+              <span class="timeline-date">JUN 2023 — JUN 2024</span>
+            </div>
+            <h3 class="timeline-title">Curtin University Engineering Foundation</h3>
+            <p class="timeline-institution"><strong>SLIIT Academy</strong></p>
+            <p class="timeline-desc">
+              Rigorous preparatory engineering curriculum focused on engineering mathematics, applied physics, programming foundations, and mechanical principles.
+            </p>
+            <div class="timeline-tags">
+              <span>Engineering Mathematics</span>
+              <span>Physics</span>
+              <span>Computing Fundamentals</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 3 -->
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-badge-row">
+              <span class="timeline-status-pill completed">CERTIFICATION</span>
+              <span class="timeline-date">MAY 2023 — SEP 2023</span>
+            </div>
+            <h3 class="timeline-title">Certificate in Applied Electronics with Internet of Things</h3>
+            <p class="timeline-institution"><strong>American Institute of Innovation</strong></p>
+            <p class="timeline-desc">
+              Specialized technical certificate emphasizing practical electronics, microcontroller interfacing, sensor circuits, Wi-Fi/Bluetooth wireless communication, and IoT implementation.
+            </p>
+            <div class="timeline-tags">
+              <span>Applied Electronics</span>
+              <span>Microcontroller Interfacing</span>
+              <span>IoT Deployment</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 4 -->
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-badge-row">
+              <span class="timeline-status-pill completed">CERTIFICATION</span>
+              <span class="timeline-date">MAR 2023 — MAY 2023</span>
+            </div>
+            <h3 class="timeline-title">Graphic Designing</h3>
+            <p class="timeline-institution"><strong>Marazin Academy</strong></p>
+            <p class="timeline-desc">
+              Visual composition, digital media tools, interface layouts, and technical documentation design aiding in clear engineering presentation and UI prototyping.
+            </p>
+            <div class="timeline-tags">
+              <span>Visual Layout</span>
+              <span>UI Concepts</span>
+              <span>Digital Media</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERESTS SECTION -->
+    <section class="section interests-section">
+      <div class="interest-panel reveal">
+        <div class="interest-header">
+          <p class="eyebrow">05 / INTERESTS &amp; DIRECTION</p>
+          <h2>Where I want<br><span>to go next.</span></h2>
+          <p class="interest-subtext">Focusing on high-impact sectors where physical systems and intelligent software intersect.</p>
+        </div>
+        <div class="interest-tags">
+          <span class="interest-tag"><span class="tag-icon">⚡</span> Industrial Automation</span>
+          <span class="interest-tag"><span class="tag-icon">◉</span> Embedded Systems</span>
+          <span class="interest-tag"><span class="tag-icon">🤖</span> Robotics</span>
+          <span class="interest-tag"><span class="tag-icon">🏭</span> Smart Manufacturing</span>
+          <span class="interest-tag"><span class="tag-icon">🌐</span> IoT Architectures</span>
+          <span class="interest-tag"><span class="tag-icon">🧠</span> AI in Edge Automation</span>
+          <span class="interest-tag"><span class="tag-icon">🏥</span> Smart Healthcare &amp; Medical Devices</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEXT CHAPTER / RECRUITER CTA -->
+    <section class="section cta-section">
+      <div class="cta-inner reveal">
+        <div class="tech-accent-pill">OPEN FOR OPPORTUNITIES</div>
+        <p class="eyebrow">06 / NEXT CHAPTER</p>
+        <h2 class="cta-title">Ready to turn engineering<br>ideas into <span>real systems.</span></h2>
+        <p class="cta-text">
+          Actively seeking engineering internships, graduate engineering opportunities, technical training, and collaborative hardware-software development roles.
+        </p>
+        <div class="cta-buttons">
+          <a class="button primary" href="#contact">Let's Connect →</a>
+          <a class="button cv-button" href="Faslan_CV_2026.pdf" download="Mohamed_Ismail_Mohamed_Faslan_CV.pdf">Download CV ↓</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section contact-section">
+      <div class="contact-header reveal">
+        <p class="eyebrow">07 / CONTACT</p>
+        <h2>Let's build<br><span>something useful.</span></h2>
+        <p class="contact-intro">
+          Whether you have an internship position, graduate role, technical inquiry, or potential collaboration, I would love to hear from you.
+        </p>
+      </div>
+
+      <div class="contact-grid reveal">
+        <!-- Email Card -->
+        <div class="contact-card">
+          <div class="contact-card-top">
+            <span class="contact-icon">✉</span>
+            <span class="contact-card-label">EMAIL ADDRESS</span>
+          </div>
+          <a href="mailto:ismailfaslan2002@gmail.com" class="contact-card-value">
+            ismailfaslan2002@gmail.com
+          </a>
+          <div class="contact-card-actions">
+            <a href="mailto:ismailfaslan2002@gmail.com" class="contact-action-btn">Open Mail ↗</a>
+            <button type="button" class="copy-btn" data-copy="ismailfaslan2002@gmail.com" aria-label="Copy email address">Copy</button>
+          </div>
+        </div>
+
+        <!-- LinkedIn Card -->
+        <div class="contact-card">
+          <div class="contact-card-top">
+            <span class="contact-icon">🔗</span>
+            <span class="contact-card-label">LINKEDIN PROFILE</span>
+          </div>
+          <a href="https://www.linkedin.com/in/faslanismail/" target="_blank" rel="noreferrer" class="contact-card-value">
+            linkedin.com/in/faslanismail
+          </a>
+          <div class="contact-card-actions">
+            <a href="https://www.linkedin.com/in/faslanismail/" target="_blank" rel="noreferrer" class="contact-action-btn">Connect on LinkedIn ↗</a>
+          </div>
+        </div>
+
+        <!-- GitHub Card -->
+        <div class="contact-card">
+          <div class="contact-card-top">
+            <span class="contact-icon">⌘</span>
+            <span class="contact-card-label">GITHUB REPOSITORIES</span>
+          </div>
+          <a href="https://github.com/FaslanIsmail" target="_blank" rel="noreferrer" class="contact-card-value">
+            github.com/FaslanIsmail
+          </a>
+          <div class="contact-card-actions">
+            <a href="https://github.com/FaslanIsmail" target="_blank" rel="noreferrer" class="contact-action-btn">View GitHub Profile ↗</a>
+          </div>
+        </div>
+
+        <!-- Phone Card -->
+        <div class="contact-card">
+          <div class="contact-card-top">
+            <span class="contact-icon">📞</span>
+            <span class="contact-card-label">PHONE / WHATSAPP</span>
+          </div>
+          <a href="tel:+94760302018" class="contact-card-value">
+            +94 760 302 018
+          </a>
+          <div class="contact-card-actions">
+            <a href="tel:+94760302018" class="contact-action-btn">Call Now ↗</a>
+            <button type="button" class="copy-btn" data-copy="+94760302018" aria-label="Copy phone number">Copy</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">&lt;FS /&gt;</span>
+        <p class="footer-copy">© 2026 Mohamed Ismail Mohamed Faslan</p>
+        <p class="footer-tagline">Mechatronics Engineering • Embedded Systems • IoT • Automation</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+        <a href="Faslan_CV_2026.pdf" download="Mohamed_Ismail_Mohamed_Faslan_CV.pdf">Download CV</a>
+      </div>
+
+      <div class="footer-back-top">
+        <a href="#home" class="back-to-top-btn" aria-label="Back to top">
+          Back to Top ↑
+        </a>
+      </div>
     </div>
-  </div>
-</section>
+  </footer>
 
-<section id="skills" class="section dark">
-  <div class="section-title"><p class="eyebrow">02 / SKILLS</p><h2>My current<br><span>engineering toolkit.</span></h2></div>
-  <div class="skills-grid">
-    <article><span class="num">01</span><h3>Programming</h3><p>C / C++ · Arduino Programming · PLC Ladder Logic</p></article>
-    <article><span class="num">02</span><h3>Embedded Systems</h3><p>Arduino UNO/Nano · ESP32 · ESP8266 · PIC Microcontrollers</p></article>
-    <article><span class="num">03</span><h3>Engineering Software</h3><p>Proteus · MATLAB · Arduino IDE · Visual Studio Code</p></article>
-    <article><span class="num">04</span><h3>IoT Technologies</h3><p>Blynk IoT · ThingSpeak · Sensor Integration · Wireless Communication</p></article>
-    <article><span class="num">05</span><h3>Electronics</h3><p>Circuit Design · Electrical Wiring · PCB Prototyping · Electronic Troubleshooting</p></article>
-    <article><span class="num">06</span><h3>Professional Skills</h3><p>Problem Solving · Communication · Leadership · Teamwork · Adaptability</p></article>
-  </div>
-</section>
+  <!-- Toast Notification Container for copy feedback -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-<section id="projects" class="section projects-section">
-  <div class="section-title"><p class="eyebrow">03 / PROJECTS</p><h2>Systems I've<br><span>built & explored.</span></h2></div>
-  <div class="projects-list">
-    <article class="project-card featured-project">
-      <div class="project-index">01</div>
-      <div class="project-content"><p class="project-tag">CAPSTONE / IoT</p><h3>Smart IoT White Cane for Visually Impaired</h3>
-      <p>Developed an intelligent navigation system using ESP32-S3. Integrated ultrasonic sensors, GPS, Bluetooth audio and a camera module to improve mobility and obstacle detection.</p>
-      <div class="chips"><span>ESP32-S3</span><span>Ultrasonic</span><span>GPS</span><span>Bluetooth Audio</span><span>Camera</span></div></div>
-    </article>
-    <article class="project-card">
-      <div class="project-index">02</div>
-      <div class="project-content"><p class="project-tag">IoT / MONITORING</p><h3>IoT Weather Monitoring System</h3>
-      <p>Built a real-time weather station using ESP8266 to monitor temperature, humidity and pressure, with remote monitoring through Blynk IoT.</p>
-      <div class="chips"><span>ESP8266</span><span>Blynk IoT</span><span>Sensors</span></div></div>
-    </article>
-    <article class="project-card">
-      <div class="project-index">03</div>
-      <div class="project-content"><p class="project-tag">CONTROL SYSTEM</p><h3>Dual-Axis Solar Tracking System</h3>
-      <p>Developed a solar tracker using PIC16F877A, LDR sensors and servo motors to follow sunlight and improve energy capture.</p>
-      <div class="chips"><span>PIC16F877A</span><span>LDR</span><span>Servo Motors</span></div></div>
-    </article>
-  </div>
-</section>
-
-<section id="education" class="section education">
-  <div class="section-title"><p class="eyebrow">04 / EDUCATION</p><h2>Building the<br><span>engineering foundation.</span></h2></div>
-  <div class="timeline">
-    <div class="timeline-item current"><div class="dot"></div><p class="time">SEP 2024 — SEP 2026</p><h3>Higher Diploma in Mechatronics Engineering</h3><p><strong>Liverpool John Moores University (ICBT)</strong></p><p>Multidisciplinary studies across mechatronics, electronics, programming, embedded systems, automation and control.</p></div>
-    <div class="timeline-item"><div class="dot"></div><p class="time">JUN 2023 — JUN 2024</p><h3>Curtin University Engineering Foundation</h3><p><strong>Sliit Academy</strong></p></div>
-    <div class="timeline-item"><div class="dot"></div><p class="time">MAY 2023 — SEP 2023</p><h3>Certificate in Applied Electronics with Internet of Things</h3><p><strong>American Institute of Innovation</strong></p></div>
-    <div class="timeline-item"><div class="dot"></div><p class="time">MAR 2023 — MAY 2023</p><h3>Graphic Designing</h3><p><strong>Marazin Academy</strong></p></div>
-  </div>
-</section>
-
-<section class="section interests">
-  <div class="interest-panel">
-    <div><p class="eyebrow">05 / INTERESTS</p><h2>Where I want<br>to go next.</h2></div>
-    <div class="interest-tags"><span>Industrial Automation</span><span>Embedded Systems</span><span>Robotics</span><span>Smart Manufacturing</span><span>IoT</span><span>AI in Automation</span><span>Smart Healthcare</span></div>
-  </div>
-</section>
-
-<section class="cta">
-  <p class="eyebrow">06 / NEXT CHAPTER</p>
-  <h2>Ready to turn engineering<br>ideas into <span>real systems.</span></h2>
-  <p>Open to internships, graduate engineering opportunities, technical training and collaboration.</p>
-  <a class="button primary" href="mailto:ismailfaslan2002@gmail.com">Let's connect →</a>
-</section>
-
-<section id="contact" class="section contact">
-  <div><p class="eyebrow">07 / CONTACT</p><h2>Let's build<br><span>something useful.</span></h2></div>
-  <div class="contact-card">
-    <a href="mailto:ismailfaslan2002@gmail.com"><span>Email</span>ismailfaslan2002@gmail.com ↗</a>
-    <a href="https://www.linkedin.com/in/faslanismail/" target="_blank" rel="noreferrer"><span>LinkedIn</span>Faslan Ismail ↗</a>
-    <a href="https://github.com/FaslanIsmail" target="_blank" rel="noreferrer"><span>GitHub</span>FaslanIsmail ↗</a>
-    <div class="phone"><span>Phone</span>+94 760 302 018</div>
-  </div>
-</section>
-</main>
-
-<footer><span>© 2026 Mohamed Ismail Mohamed Faslan</span><span>Mechatronics • Embedded • IoT</span></footer>
-<script src="js/script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
