@@ -33,17 +33,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Mobile Drawer Menu ---
   const openMobileMenu = () => {
-    mobileNav?.classList.add('open');
-    mobileNav?.setAttribute('aria-hidden', 'false');
+    if (!mobileNav) return;
+    mobileNav.style.display = 'block';
+    // Force reflow for CSS transition
+    void mobileNav.offsetHeight;
+    mobileNav.classList.add('open');
+    mobileNav.setAttribute('aria-hidden', 'false');
     menuToggle?.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
   };
 
   const closeMobileMenu = () => {
-    mobileNav?.classList.remove('open');
-    mobileNav?.setAttribute('aria-hidden', 'true');
+    if (!mobileNav) return;
+    mobileNav.classList.remove('open');
+    mobileNav.setAttribute('aria-hidden', 'true');
     menuToggle?.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
+    setTimeout(() => {
+      if (!mobileNav.classList.contains('open')) {
+        mobileNav.style.display = 'none';
+      }
+    }, 320);
   };
 
   menuToggle?.addEventListener('click', () => {

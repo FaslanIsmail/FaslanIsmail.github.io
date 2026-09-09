@@ -380,12 +380,20 @@ a:focus-visible, button:focus-visible {
   z-index: 200;
   pointer-events: none;
   visibility: hidden;
+  display: none;
   transition: visibility var(--transition-smooth);
 }
 
 .mobile-nav-drawer.open {
+  display: block;
   pointer-events: auto;
   visibility: visible;
+}
+
+@media (min-width: 861px) {
+  .mobile-nav-drawer {
+    display: none !important;
+  }
 }
 
 .mobile-nav-backdrop {
