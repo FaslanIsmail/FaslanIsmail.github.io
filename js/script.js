@@ -167,4 +167,32 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // --- LinkedIn Activity Carousel Controls & Tabs ---
+  const activityTrack = document.getElementById('activityTrack');
+  const carouselPrev = document.getElementById('carouselPrev');
+  const carouselNext = document.getElementById('carouselNext');
+  const activityTabs = document.querySelectorAll('.activity-tab');
+
+  if (activityTrack) {
+    const getScrollStep = () => {
+      const card = activityTrack.querySelector('.linkedin-card');
+      return card ? card.offsetWidth + 20 : 360;
+    };
+
+    carouselPrev?.addEventListener('click', () => {
+      activityTrack.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+    });
+
+    carouselNext?.addEventListener('click', () => {
+      activityTrack.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+    });
+
+    activityTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        activityTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+      });
+    });
+  }
 });

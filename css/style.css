@@ -1265,78 +1265,483 @@ a:focus-visible, button:focus-visible {
   background: rgba(0, 255, 136, 0.1);
 }
 
-/* --- LinkedIn Embed Showcase in Project Cards --- */
-.project-embed-wrapper {
+/* --- LinkedIn Post Card Component (Native Activity Style) --- */
+.linkedin-post-card {
   margin-top: 24px;
-  background: rgba(7, 11, 9, 0.85);
+  background: rgba(10, 15, 12, 0.94);
   border: 1px solid var(--border-subtle);
-  border-radius: 6px;
-  overflow: hidden;
-  transition: border-color var(--transition-smooth);
+  border-radius: 8px;
+  padding: 22px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  transition: all var(--transition-smooth);
 }
 
-.project-embed-wrapper:hover {
+.linkedin-post-card:hover {
   border-color: var(--accent-border);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 255, 136, 0.08);
 }
 
-.embed-header {
+.li-post-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  padding: 12px 18px;
-  background: rgba(14, 21, 16, 0.95);
-  border-bottom: 1px solid var(--border-subtle);
-  flex-wrap: wrap;
-  gap: 10px;
+  margin-bottom: 14px;
 }
 
-.embed-header-left {
+.li-author {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
 }
 
-.embed-pulse-dot {
-  width: 6px;
-  height: 6px;
+.li-avatar-box {
+  position: relative;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 8px var(--accent);
+  flex-shrink: 0;
 }
 
-.embed-tag {
+.li-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent);
+}
+
+.li-opentowork-ring {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  pointer-events: none;
+}
+
+.li-author-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.li-author-name {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+.li-author-name strong {
+  font-weight: 700;
+}
+
+.li-badge {
+  background: #0077b5;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 1px 4px;
+  border-radius: 2px;
+  line-height: 1;
+}
+
+.li-sub {
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.li-headline {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.3;
+  margin-top: 2px;
+}
+
+.li-time {
   font-family: var(--font-mono);
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+.li-more-btn {
+  color: var(--text-dim);
+  font-size: 16px;
+  letter-spacing: 2px;
+  padding: 4px;
+  line-height: 1;
+  transition: color var(--transition-fast);
+}
+
+.li-more-btn:hover {
   color: var(--accent);
 }
 
-.embed-link {
+.li-post-body {
+  font-size: 13.5px;
+  color: var(--text-main);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.li-see-more {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+  margin-left: 4px;
+}
+
+.li-post-media {
+  position: relative;
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  background: #040705;
+  margin-bottom: 16px;
+}
+
+.li-media-img {
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-smooth);
+}
+
+.li-post-media:hover .li-media-img {
+  transform: scale(1.02);
+}
+
+.li-media-counter {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.li-post-action-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.li-open-post-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--accent);
+  background: rgba(0, 255, 136, 0.08);
+  border: 1px solid var(--accent-border);
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: all var(--transition-fast);
+}
+
+.li-open-post-btn:hover {
+  background: var(--accent);
+  color: #070a08;
+  box-shadow: 0 4px 18px rgba(0, 255, 136, 0.3);
+  transform: translateY(-1px);
+}
+
+.li-icon {
+  background: #0077b5;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+
+/* --- Dedicated Activity Carousel Section --- */
+.activity-section {
+  padding-top: 90px;
+  padding-bottom: 110px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.activity-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.activity-title-group h2 {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4.5vw, 52px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+
+.activity-followers {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+
+.activity-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.activity-filter-tabs {
+  display: flex;
+  gap: 8px;
+  background: rgba(14, 21, 16, 0.8);
+  padding: 4px;
+  border-radius: 100px;
+  border: 1px solid var(--border-subtle);
+}
+
+.activity-tab {
   font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 600;
   color: var(--text-muted);
-  transition: color var(--transition-fast);
+  padding: 6px 14px;
+  border-radius: 100px;
+  transition: all var(--transition-fast);
 }
 
-.embed-link:hover {
-  color: var(--accent);
+.activity-tab.active,
+.activity-tab:hover {
+  background: var(--accent);
+  color: #070a08;
 }
 
-.embed-frame-container {
-  width: 100%;
-  background: #000;
+.carousel-nav-arrows {
   display: flex;
-  justify-content: center;
-  overflow: hidden;
+  gap: 8px;
 }
 
-.embed-frame-container iframe {
+.carousel-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  transition: all var(--transition-fast);
+}
+
+.carousel-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(0, 255, 136, 0.1);
+}
+
+.activity-carousel-wrapper {
+  position: relative;
+  overflow: hidden;
   width: 100%;
-  max-width: 100%;
-  border: none;
+}
+
+.activity-cards-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 8px 4px 20px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-border) transparent;
+}
+
+.activity-cards-track::-webkit-scrollbar {
+  height: 6px;
+}
+
+.activity-cards-track::-webkit-scrollbar-thumb {
+  background: var(--accent-border);
+  border-radius: 3px;
+}
+
+.linkedin-card {
+  flex: 0 0 min(380px, 85vw);
+  scroll-snap-align: start;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(12px);
+  transition: all var(--transition-smooth);
+}
+
+.linkedin-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-border);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 255, 136, 0.1);
+}
+
+.linkedin-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.author-avatar-wrap {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.author-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-name-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+.author-headline {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.3;
+  margin-top: 2px;
+}
+
+.post-time {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+.post-menu-dots {
+  color: var(--text-dim);
+  font-size: 16px;
+  letter-spacing: 2px;
+  padding: 4px;
+  line-height: 1;
+}
+
+.linkedin-card-caption {
+  font-size: 13.5px;
+  color: var(--text-main);
+  line-height: 1.6;
+  margin-bottom: 14px;
+  flex-grow: 1;
+}
+
+.read-more-tag {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.linkedin-card-media {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  background: #040705;
+  margin-bottom: 16px;
+}
+
+.post-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
+}
+
+.post-photo-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.linkedin-card-footer {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.linkedin-post-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--accent);
+  background: rgba(0, 255, 136, 0.08);
+  border: 1px solid var(--accent-border);
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: all var(--transition-fast);
+  width: 100%;
+  justify-content: center;
+}
+
+.linkedin-post-action-btn:hover {
+  background: var(--accent);
+  color: #070a08;
+  box-shadow: 0 4px 18px rgba(0, 255, 136, 0.3);
+}
+
+.in-icon {
+  background: #0077b5;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 2px 4px;
+  border-radius: 2px;
 }
 
 /* --- VERTICAL EDUCATION TIMELINE --- */
