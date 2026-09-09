@@ -1858,9 +1858,9 @@ a:focus-visible, button:focus-visible {
 }
 
 .timeline-status-pill.completed {
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--text-muted);
-  border: 1px solid var(--border-subtle);
+  background: rgba(0, 255, 136, 0.12);
+  color: var(--accent);
+  border: 1px solid var(--accent-border);
 }
 
 .timeline-date {
